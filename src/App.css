@@ -12,7 +12,84 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.size{
+    height: 353px !important;
+    background: #EFF2F4 !important;
+    box-shadow:
+      16px 4px 55px #D1D9E6, -16px -16px 35px rgba(255, 255, 255, 0.8), inset -8px -6px 70px rgba(255, 255, 255, 0.18) !important;
+    border-radius: 24px !important;
+}
+.size:hover{
+box-shadow: -8px -8px 20px #FFFFFF, 8px 8px 20px #D1D9E6 !important;
+}
+.active-tab{
+    color: #08C5A7;
+    border: 1px solid #08C5A7;
+    margin: 0 30px !important;
+    padding: 5px 15px;
+    opacity: 0.8;
+    background: #EFF2F4;
+    box-shadow: inset 3px 3px 7px #D1D9E6, inset -3px -3px 7px #FFFFFF !important;
+    border-radius: 15px !important;
+}
+.NavStyle{
+  color: #08C5A7;
+  border: 1px solid #08C5A7;
+  margin: 0 30px !important;
+  width: 150px !important;
+  padding: 6px 15px;
+  background: #EFF2F4;
+  box-shadow: -8px -8px 20px #FFFFFF, 8px 8px 20px #D1D9E6;
+  border-radius: 16px;
+}
+.NavStyle:hover{
+  box-shadow: inset 3px 3px 7px #D1D9E6, inset -3px -3px 7px #FFFFFF;
+  border-radius: 15px;
+}
+.active-link{
+  opacity :1 !important;
+}
+.nav-link{
+  margin: 0 30px !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: linear-gradient(84.6deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%);
+box-shadow: inset 4px 4px 6px rgba(18, 46, 101, 0.15), inset -4px -4px 7px rgba(255, 255, 255, 0.7);
+border-radius: 31px
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(87.85deg, #F0F4F9 -4.95%, #587CA5 578.66%);
+box-shadow: -1px 2px 2px rgba(24, 55, 91, 0.1), inset 0px -2px 1px rgba(39, 81, 126, 0.12), inset 0px 0px 4px rgba(46, 68, 87, 0.02);
+backdrop-filter: blur(28px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 26px;
+}
+.startBtn{
+  width: 200px;
+  height: 56px;
+  background: #08C5A7 !important;
+box-shadow: 10px 5px 20px #D1D9E6, -10px -5px 20px #FFFFFF,inset 1px 1px 1px #04E8C3, inset -1px -1px 1px #07B096;
+color: #FFFFFF !important;
+text-transform: capitalize !important;
+text-align: center !important;
+border-radius: 16px !important;
+}
+.startBtn:hover{
+  box-shadow: inset 3px 3px 7px #04E8C3, inset -3px -3px 7px #07B096;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #587CA5; 
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
