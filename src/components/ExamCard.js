@@ -15,6 +15,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     lineHeight: "180%",
     color: "rgba(49,69,106,0.5)",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "small",
+      lineHeight: "inherit",
+    },
   },
 
   header: {
@@ -23,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
     lineHeight: "160%",
     color: "#31456A",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "18px",
+      lineHeight: "inherit",
+    },
   },
   content: {
     padding: theme.spacing(2),
@@ -30,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     lineHeight: "175%",
     color: "rgba(49, 69, 106, 0.5)",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
+      lineHeight: "inherit",
+    },
   },
 }));
 function ExamCard() {

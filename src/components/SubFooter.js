@@ -1,4 +1,6 @@
 import React from "react";
+import "../assets/footer.css";
+
 import {
   Container,
   Box,
@@ -17,18 +19,17 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    flexGrow: 1,
-    fontSize: "14px",
-    fontWeight: "500",
-    color: "rgba(49,69,106, 0.7)",
-  },
+ 
   icon: {
     background: "#EFF2F4",
     margin: "10px",
     padding: "10px",
     boxShadow: "-8px -8px 20px #FFFFFF, 8px 8px 20px #D1D9E6",
     borderRadius: "50px",
+    [theme.breakpoints.down('sm')]:{
+      marginRight: "7px",
+      padding: "7px",
+    }
   },
   bottomIcon: {
     background: "#EFF2F4",
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
     boxShadow: "-8px -8px 20px #FFFFFF, 8px 8px 20px #D1D9E6",
     borderRadius: "50px",
+    [theme.breakpoints.down('sm')]: {
+      display: "none"
+    }
   },
 }));
 
@@ -46,7 +50,7 @@ function SubFooter() {
       <Box style={{ height: "22%", padding: "0.8rem, 0" }}>
         <Container maxWidth="md">
           <Toolbar>
-            <Typography className={classes.title}>
+            <Typography className="title">
               &copy;2020 Onesaz. All rights reserved.
             </Typography>
 

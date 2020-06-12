@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     padding: 30,
     overflowX: "auto",
     height: "90vh",
+    [theme.breakpoints.down('sm')]: {
+      height: "70vh"
+    }
   },
 }));
 function JeeMainsContent() {
@@ -20,7 +23,7 @@ function JeeMainsContent() {
         {data
           ? data.map((item, index) => {
               return (
-                <Grid item xs={4} key={index}>
+                <Grid item xs={12} sm={4} key={index}>
                   <ExamCard key={index}></ExamCard>
                 </Grid>
               );

@@ -16,6 +16,7 @@ import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    height: "10%", paddingTop: "0.5rem"
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -23,13 +24,26 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  
   people: {
     background: "#EFF2F4",
     margin: "10px",
     padding: "10px",
     boxShadow: "-8px -8px 20px #FFFFFF, 8px 8px 20px #D1D9E6",
     borderRadius: "50px",
+    [theme.breakpoints.down('sm')]: {
+      height: "inherit",
+    }
+    
   },
+  img:{
+    width:"150px" ,height:"40px",
+    [theme.breakpoints.down('sm')]: {
+      width: "90px",
+      height: "25px",
+      marginLeft:"-5px"
+    }
+  }
 }));
 const themes = createMuiTheme({
   overrides: {
@@ -45,14 +59,13 @@ function Header() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Box style={{ height: "10%", paddingTop: "0.5rem" }}>
-        <Container maxWidth="md">
+        <Container  maxWidth="md">
           <Toolbar>
             <Typography className={classes.title}>
-              <img src={image} width="150px" height="40px" alt="logo"></img>
+              <img src={image} className={classes.img} alt="logo"></img>
             </Typography>
             <MuiThemeProvider theme={themes}>
-              <Button color="inherit">
+              <Button   color="inherit">
                 <NavLink
                   to="/home"
                   activeClassName="active"
@@ -73,15 +86,15 @@ function Header() {
                   Concepts
                 </NavLink>
               </Button>
-              <Box color="inherit" className={classes.people}>
+              <Box color="inherit" className={classes.people} >
                 <PermIdentityOutlinedIcon
-                  style={{ color: "#08C5A7" }}
+                className="person"
+                  
                 ></PermIdentityOutlinedIcon>
               </Box>
             </MuiThemeProvider>
           </Toolbar>
         </Container>
-      </Box>
     </div>
   );
 }

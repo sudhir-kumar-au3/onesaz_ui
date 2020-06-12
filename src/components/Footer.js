@@ -1,4 +1,5 @@
 import React from "react";
+import "../assets/footer.css";
 import {
   Container,
   Box,
@@ -17,16 +18,32 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+
   title: {
     flexGrow: 1,
   },
   signout: {
     // margin: "10px",
     paddingLeft: "20px",
+    [theme.breakpoints.down('sm')]:{
+      display:"none"
+    }
   },
+  img: {
+    width: "150px",
+    height: "40px",
+    [theme.breakpoints.down("sm")]: {
+      width: "90px",
+      height: "25px",
+      marginLeft: "-5px",
+    },
+  },
+  btnBox:{
+    [theme.breakpoints.down('sm')]:{
+      display: "flex-col",
+      marginRight: "10px"
+    }
+  }
 }));
 const themes = createMuiTheme({
   overrides: {
@@ -42,13 +59,16 @@ function Footer() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Box style={{ height: "22%", paddingTop: "0.5rem", paddingBottom: "0.5rem" }}>
+      <Box
+        style={{ height: "22%", paddingTop: "0.5rem", paddingBottom: "0.5rem" }}
+      >
         <Container maxWidth="md">
           <Toolbar>
             <Typography className={classes.title}>
-              <img src={image} width="150px" height="40px" alt="logo"></img>
+              <img src={image} className={classes.img} alt="logo"></img>
             </Typography>
-            <MuiThemeProvider theme={themes}>
+           <Box className={classes.btnBox}>
+           <MuiThemeProvider theme={themes}>
               <Button color="inherit">
                 <Link
                   to="/home/aboutus"
@@ -81,11 +101,12 @@ function Footer() {
                 className={classes.signout}
               ></ExitToAppRoundedIcon>{" "}
               <span style={{ paddingTop: "-10px" }}>
-                <Button color="inherit">Sign out</Button>
+                <Button color="inherit" className="sign-out">Sign out</Button>
               </span>
             </MuiThemeProvider>
+           </Box>
           </Toolbar>
-          <hr style={{background: "#EFF2F4", opacity: "0.3"}}></hr>
+          <hr style={{ background: "#EFF2F4", opacity: "0.3" }}></hr>
         </Container>
       </Box>
       <SubFooter></SubFooter>

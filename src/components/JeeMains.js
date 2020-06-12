@@ -8,6 +8,14 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
     paddingTop: "5%",
+    fontSize: "18px",
+    lineHeight: "200%",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "inherit",
+      lineHeight: "inherit",
+      display: "flex",
+      overFlowY: "auto"
+    },
   },
   span: {
     color: "#08C5A7",
@@ -17,12 +25,7 @@ function JeeMains() {
   const classes = useStyles();
   return (
     <div>
-      <Box
-        fontSize="18px"
-        lineHeight="200%"
-        padding={3}
-        className={classes.root}
-      >
+      <Box padding={3} className={classes.root}>
         <NavLink
           to="/home/jeemains/allexams"
           activeClassName="active-link"
@@ -71,9 +74,11 @@ function JeeMains() {
         >
           <span className={classes.span}>5</span> Upcoming Exams
         </NavLink>
-        <hr style={{ background: "#D1D9E6" }}></hr>
-      </Box>
-      <Route path="/home/jeemains/allexams"><JeeMainsContent></JeeMainsContent></Route>
+      </Box>{" "}
+      <hr style={{ background: "#D1D9E6" }}></hr>
+      <Route path="/home/jeemains/allexams">
+        <JeeMainsContent></JeeMainsContent>
+      </Route>
     </div>
   );
 }

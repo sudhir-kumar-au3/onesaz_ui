@@ -7,7 +7,25 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
     textAlign: "center",
+    [theme.breakpoints.down('sm')]:{
+      display: "flex"
+    }
+    
   },
+  textHead:{
+    textAlign: "center", paddingTop: "5%",
+    [theme.breakpoints.down('sm')]: {
+      fontSize:"inherit"
+    }
+  },
+  textSm:{
+    fontSize:"18px",
+    lineHeight:"200%",
+    color: "rgba(49,69,106,0.7)",
+    [theme.breakpoints.down('sm')]:{
+      fontSize:"inherit",
+    }
+  }
 }));
 function SubHeader() {
   const classes = useStyles();
@@ -16,15 +34,13 @@ function SubHeader() {
       <Typography
         component="h4"
         variant="h4"
-        style={{ textAlign: "center", paddingTop: "5%" }}
+        className={classes.textHead}
       >
         What do You Want to <span style={{ color: "#08C5A7" }}>Learn</span>{" "}
         Today?
         <Box
-          fontSize="18px"
-          lineHeight="200%"
           padding={3}
-          style={{ color: "rgba(49,69,106,0.7)" }}
+          className={classes.textSm}
         >
           Select course type to continue
         </Box>

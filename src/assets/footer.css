@@ -1,0 +1,19 @@
+.title {
+    flex-grow: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(49,69,106, 0.7);
+    
+  }
+@media(max-width: 600px){
+    .link-text{
+        font-size:x-small !important;
+    }
+    .sign-out{
+        font-size: x-small !important;
+    }
+    .title {
+        font-size: x-small !important;
+        
+      }
+}
